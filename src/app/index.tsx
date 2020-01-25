@@ -16,15 +16,15 @@ const App: React.FC = () => {
       <Router>
         <div>
           <ul className="app-menu">
-            <li>
-              <Link to={`${process.env.REACT_BASE_URL}/`}>Home</Link>
-            </li>
-            <li>
-              <Link to={`${process.env.REACT_BASE_URL}/about`}>About</Link>
-            </li>
-            <li>
-              <Link to={`${process.env.REACT_BASE_URL}/dashboard`}>Dashboard</Link>
-            </li>
+            <Link to={`${process.env.REACT_BASE_URL}/`}><li>
+              Home
+            </li></Link>
+            <Link to={`${process.env.REACT_BASE_URL}/about`}><li>
+              about
+            </li></Link>
+            <Link to={`${process.env.REACT_BASE_URL}/dashboard`}><li>
+              Dashboard
+            </li></Link>
           </ul>
 
           <hr />
@@ -48,8 +48,8 @@ const App: React.FC = () => {
             </Route>
           </Switch>
         </div>
-      </Router>
-    </div>
+      </Router >
+    </div >
   );
 }
 
