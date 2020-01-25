@@ -1,5 +1,8 @@
 .About {
     display: flex;
     flex-direction: column;
-    color: snow;
+
+    h1 {
+        color: snow;
+    }
 }

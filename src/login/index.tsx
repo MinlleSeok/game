@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
+import './login.scss';
+import { useHistory } from 'react-router-dom';
 
 const Login: React.FC = () => {
   const [state, setState] = useState();
-    const action = (e: React.FormEvent) => {
-        e.preventDefault();
+  const history = useHistory();
 
-        // Router.push({
-        //     pathname: '/about',
-        //     query: { name: state },
-        // });
-    }
+  const action = (e: React.FormEvent) => {
+    e.preventDefault();
+    history.push(`${process.env.REACT_APP_BASE_URL}/about`, { name : state });
+  }
 
   return (
     <div className="Login">
-      <header className="App-header">
-        <form onSubmit={action}>
-          <label>
-            Edit <code>src/App.tsx</code> and save to reload.
+      <form onSubmit={action}>
+        <label>
+          Edit <code>src/App.tsx</code> and save to reload.
         </label>
-          <input type="text" value={state} onChange={(e) => setState(e.target.value)} required />
-          <input type="submit" />
-        </form>
-      </header>
+        <input type="text" value={state} onChange={(e) => setState(e.target.value)} required />
+        <input type="submit" />
+      </form>
     </div>
   );
 }

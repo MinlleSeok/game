@@ -16,13 +16,13 @@ const App: React.FC = () => {
       <Router>
         <div>
           <ul className="app-menu">
-            <Link to={`${process.env.REACT_BASE_URL}/`}><li>
+            <Link to={`${process.env.REACT_APP_BASE_URL}/`}><li>
               Home
             </li></Link>
-            <Link to={`${process.env.REACT_BASE_URL}/about`}><li>
+            <Link to={`${process.env.REACT_APP_BASE_URL}/about`}><li>
               about
             </li></Link>
-            <Link to={`${process.env.REACT_BASE_URL}/dashboard`}><li>
+            <Link to={`${process.env.REACT_APP_BASE_URL}/dashboard`}><li>
               Dashboard
             </li></Link>
           </ul>
@@ -37,13 +37,16 @@ const App: React.FC = () => {
           of them to render at a time
         */}
           <Switch>
-            <Route exact path={`${process.env.REACT_BASE_URL}/`}>
+            <Route exact path="/">
               <Login />
             </Route>
-            <Route path={`${process.env.REACT_BASE_URL}/about`}>
+            <Route exact path={`${process.env.REACT_APP_BASE_URL}/`}>
+              <Login />
+            </Route>
+            <Route path={`${process.env.REACT_APP_BASE_URL}/about`}>
               <About />
             </Route>
-            <Route path={`${process.env.REACT_BASE_URL}/dashboard`}>
+            <Route path={`${process.env.REACT_APP_BASE_URL}/dashboard`}>
               <Login />
             </Route>
           </Switch>
