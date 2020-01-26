@@ -1,3 +1,29 @@
 .Login {
     color: snow;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    form {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+
+        h1, label, input {
+            margin-bottom: 20px;
+        }
+
+        input {
+            height: 30px;
+            background-color: rgba(0,0,0,0);
+            border-bottom: 1px solid wheat;
+            border-top: 0;
+            border-left: 0;
+            color: white;
+            text-align: center;
+        }
+    }
 }

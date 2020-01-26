@@ -8,22 +8,23 @@ import {
 import './App.scss';
 import Login from '../login';
 import About from '../about';
+import TApp from '../containers/TApp';
 
 const App: React.FC = () => {
-
+  
   return (
     <div className="App">
       <Router>
         <div>
           <ul className="app-menu">
             <Link to={`${process.env.REACT_APP_BASE_URL}/`}><li>
-              Home
+              로그잉
             </li></Link>
             <Link to={`${process.env.REACT_APP_BASE_URL}/about`}><li>
-              about
+              방구
             </li></Link>
             <Link to={`${process.env.REACT_APP_BASE_URL}/dashboard`}><li>
-              Dashboard
+              잼난 일
             </li></Link>
           </ul>
 
@@ -37,9 +38,6 @@ const App: React.FC = () => {
           of them to render at a time
         */}
           <Switch>
-            <Route exact path="/">
-              <Login />
-            </Route>
             <Route exact path={`${process.env.REACT_APP_BASE_URL}/`}>
               <Login />
             </Route>
@@ -47,7 +45,7 @@ const App: React.FC = () => {
               <About />
             </Route>
             <Route path={`${process.env.REACT_APP_BASE_URL}/dashboard`}>
-              <Login />
+              <TApp />
             </Route>
           </Switch>
         </div>

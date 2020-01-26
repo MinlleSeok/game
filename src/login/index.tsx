@@ -14,8 +14,9 @@ const Login: React.FC = () => {
   return (
     <div className="Login">
       <form onSubmit={action}>
+        <h1>현빈이 키우기</h1>
         <label>
-          Edit <code>src/App.tsx</code> and save to reload.
+          - 당신의 이름 -
         </label>
         <input type="text" value={state} onChange={(e) => setState(e.target.value)} required />
         <input type="submit" />

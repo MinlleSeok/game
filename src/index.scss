@@ -1,4 +1,4 @@
-html, head, body, div, ul, li, h1 {
+html, head, body, div, ul, li, h1, hr {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white;
 }
 
 code {
@@ -19,4 +20,5 @@ code {
 
 a, ul {
   text-decoration: none;
+  color: wheat;
 }
