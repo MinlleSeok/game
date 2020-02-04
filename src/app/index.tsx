@@ -9,6 +9,7 @@ import './App.scss';
 import Login from '../login';
 import About from '../about';
 import TApp from '../containers/TApp';
+import Type from '../containers/Type/index';
 
 const App: React.FC = () => {
   
@@ -25,6 +26,9 @@ const App: React.FC = () => {
             </li></Link>
             <Link to={`${process.env.REACT_APP_BASE_URL}/dashboard`}><li>
               잼난 일
+            </li></Link>
+            <Link to={`${process.env.REACT_APP_BASE_URL}/type`}><li>
+              타입
             </li></Link>
           </ul>
 
@@ -46,6 +50,9 @@ const App: React.FC = () => {
             </Route>
             <Route path={`${process.env.REACT_APP_BASE_URL}/dashboard`}>
               <TApp />
+            </Route>
+            <Route path={`${process.env.REACT_APP_BASE_URL}/type`}>
+              <Type />
             </Route>
           </Switch>
         </div>
