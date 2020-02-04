@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  BrowserRouter
 } from "react-router-dom";
 import './App.scss';
 import Login from '../login';
@@ -19,7 +20,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter basename={url}>
         <div>
           <ul className="app-menu">
             <Link to={`${url}/`}><li>
@@ -72,7 +73,7 @@ const App: React.FC = () => {
             </Route>
           </Switch>
         </div>
-      </Router >
+      </BrowserRouter >
     </div >
   );
 }
