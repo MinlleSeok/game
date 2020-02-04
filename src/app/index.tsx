@@ -16,29 +16,29 @@ import Space from '../containers/Space';
 
 const App: React.FC = () => {
   
-  const url = `${process.env.PUBLIC_URL}`;
+  const url = `${process.env.REACT_APP_BASE_URL}`;
 
   return (
     <div className="App">
       <BrowserRouter basename={url}>
         <div>
           <ul className="app-menu">
-            <Link to={`${url}/`}><li>
+            <Link to={`/`}><li>
               로그잉
             </li></Link>
-            <Link to={`${url}/about`}><li>
+            <Link to={`/about`}><li>
               방구
             </li></Link>
-            <Link to={`${url}/dashboard`}><li>
+            <Link to={`/dashboard`}><li>
               투두
             </li></Link>
-            <Link to={`${url}/type`}><li>
+            <Link to={`/type`}><li>
               타입
             </li></Link>
-            <Link to={`${url}/guess`}><li>
+            <Link to={`/guess`}><li>
               추측
             </li></Link>
-            <Link to={`${url}/space`}><li>
+            <Link to={`/space`}><li>
               우주
             </li></Link>
           </ul>
@@ -53,22 +53,22 @@ const App: React.FC = () => {
           of them to render at a time
         */}
           <Switch>
-            <Route exact path={`${url}/`}>
+            <Route exact path={`/`}>
               <Login />
             </Route>
-            <Route exact path={`${url}/about`}>
+            <Route exact path={`/about`}>
               <About />
             </Route>
-            <Route exact path={`${url}/dashboard`}>
+            <Route exact path={`/dashboard`}>
               <TApp />
             </Route>
-            <Route exact path={`${url}/type`}>
+            <Route exact path={`/type`}>
               <Type />
             </Route>
-            <Route exact path={`${url}/guess`}>
+            <Route exact path={`/guess`}>
               <Guess />
             </Route>
-            <Route exact path={`${url}/space`}>
+            <Route exact path={`/space`}>
               <Space />
             </Route>
           </Switch>
