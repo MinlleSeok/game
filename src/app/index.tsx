@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Link,
-  BrowserRouter
+  useLocation,
+  HashRouter
 } from "react-router-dom";
 import './App.scss';
 import Login from '../login';
@@ -20,7 +20,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <BrowserRouter basename={url}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <div>
           <ul className="app-menu">
             <Link to={`/`}><li>
@@ -56,26 +56,41 @@ const App: React.FC = () => {
             <Route exact path={`/`}>
               <Login />
             </Route>
-            <Route exact path={`/about`}>
+            <Route path={`/about`}>
               <About />
             </Route>
-            <Route exact path={`/dashboard`}>
+            <Route path={`/dashboard`}>
               <TApp />
             </Route>
-            <Route exact path={`/type`}>
+            <Route path={`/type`}>
               <Type />
             </Route>
-            <Route exact path={`/guess`}>
+            <Route path={`/guess`}>
               <Guess />
             </Route>
-            <Route exact path={`/space`}>
+            <Route path={`/space`}>
               <Space />
             </Route>
+            <Route path="*">
+            <NoMatch />
+          </Route>
           </Switch>
         </div>
-      </BrowserRouter >
+      </HashRouter>
     </div >
   );
+}
+
+function NoMatch() {
+  let location = useLocation();
+
+  return (
+    <div>
+      <h3>
+        No match for <code>{location.pathname}</code>
+      </h3>
+    </div>
+  )
 }
 
 export default App;
