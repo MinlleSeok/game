@@ -15,7 +15,7 @@ import Space from '../containers/Space';
 
 const App: React.FC = () => {
   
-  const url = `${process.env.PUBLIC_URL}${process.env.REACT_APP_BASE_URL}`;
+  const url = `${process.env.PUBLIC_URL}`;
 
   return (
     <div className="App">
