@@ -9,7 +9,9 @@ import './App.scss';
 import Login from '../login';
 import About from '../about';
 import TApp from '../containers/TApp';
-import Type from '../containers/Type/index';
+import Type from '../containers/Type';
+import Guess from '../containers/Guess';
+import Space from '../containers/Space';
 
 const App: React.FC = () => {
   
@@ -25,10 +27,16 @@ const App: React.FC = () => {
               방구
             </li></Link>
             <Link to={`${process.env.REACT_APP_BASE_URL}/dashboard`}><li>
-              잼난 일
+              투두
             </li></Link>
             <Link to={`${process.env.REACT_APP_BASE_URL}/type`}><li>
               타입
+            </li></Link>
+            <Link to={`${process.env.REACT_APP_BASE_URL}/guess`}><li>
+              추측
+            </li></Link>
+            <Link to={`${process.env.REACT_APP_BASE_URL}/space`}><li>
+              우주
             </li></Link>
           </ul>
 
@@ -53,6 +61,12 @@ const App: React.FC = () => {
             </Route>
             <Route path={`${process.env.REACT_APP_BASE_URL}/type`}>
               <Type />
+            </Route>
+            <Route path={`${process.env.REACT_APP_BASE_URL}/guess`}>
+              <Guess />
+            </Route>
+            <Route path={`${process.env.REACT_APP_BASE_URL}/space`}>
+              <Space />
             </Route>
           </Switch>
         </div>
