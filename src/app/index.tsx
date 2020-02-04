@@ -53,19 +53,19 @@ const App: React.FC = () => {
             <Route exact path={`${process.env.REACT_APP_BASE_URL}/`}>
               <Login />
             </Route>
-            <Route path={`${process.env.REACT_APP_BASE_URL}/about`}>
+            <Route exact path={`${process.env.REACT_APP_BASE_URL}/about`}>
               <About />
             </Route>
-            <Route path={`${process.env.REACT_APP_BASE_URL}/dashboard`}>
+            <Route exact path={`${process.env.REACT_APP_BASE_URL}/dashboard`}>
               <TApp />
             </Route>
-            <Route path={`${process.env.REACT_APP_BASE_URL}/type`}>
+            <Route exact path={`${process.env.REACT_APP_BASE_URL}/type`}>
               <Type />
             </Route>
-            <Route path={`${process.env.REACT_APP_BASE_URL}/guess`}>
+            <Route exact path={`${process.env.REACT_APP_BASE_URL}/guess`}>
               <Guess />
             </Route>
-            <Route path={`${process.env.REACT_APP_BASE_URL}/space`}>
+            <Route exact path={`${process.env.REACT_APP_BASE_URL}/space`}>
               <Space />
             </Route>
           </Switch>

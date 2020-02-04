@@ -10,55 +10,61 @@ function initGame() {
 
     // canvas width and height
     can.width = window.innerWidth;
-    can.height = window.innerHeight;
+    can.height = 600;
 
     // create an image element
-    const img = new Image(can.width, can.height);
+    const img = new Image();
 
     // specify the image source relative to the html or js file
     // when the image is in the same directory as the file
     // only the file name is required:
-    img.src = `${process.env.REACT_APP_BASE_URL}/spacebg.png`;
+    if (process.env.NODE_ENV !== "production") {
+        img.src = `http://localhost:3000/spacebg.png`;    
+    } else {
+        img.src = `${process.env.REACT_APP_BASE_URL}/spacebg.png`;
+    }
 
     // window.onload is an event that occurs when all the assets
     // have been succesfuly loaded (in this case only the spacebg.png)
-    // window.onload = function() {
-        // the initial image height
-        let imgHeight = 0;
+    abc(ctx, img, can);
+}
 
-        // the scroll speed
-        // an important thing to ensure here is that can.height
-        // is divisible by scrollSpeed
-        const scrollSpeed = 10;
+function abc(ctx: any, img: any, can: any) {
+    // the initial image height
+    let imgHeight = 0;
 
-        // this is the primary animation loop that is called 60 times
-        // per second
-        function loop() {
-            // draw image 1
-            ctx?.drawImage(img, 0, imgHeight, can.width, can.height);
+    // the scroll speed
+    // an important thing to ensure here is that can.height
+    // is divisible by scrollSpeed
+    const scrollSpeed = 10;
 
-            // draw image 2
-            ctx?.drawImage(img, 0, imgHeight - can.height, can.width, can.height);
+    // this is the primary animation loop that is called 60 times
+    // per second
+    function loop() {
+        // draw image 1
+        ctx?.drawImage(img, 0, imgHeight, can.width, can.height);
 
-            // update image height
-            imgHeight += scrollSpeed;
+        // draw image 2
+        ctx?.drawImage(img, 0, imgHeight - can.height, can.width, can.height);
 
-            // reseting the images when the first image entirely
-            // exits the screen
-            if (imgHeight === can.height) {
-                imgHeight = 0;
-            }
+        // update image height
+        imgHeight += scrollSpeed;
 
-            // this function creates a 60fps animation by scheduling a
-            // loop function call before the
-            // next redraw every time it is called
-            window.requestAnimationFrame(loop);
+        // reseting the images when the first image entirely
+        // exits the screen
+        if (imgHeight === can.height) {
+            imgHeight = 0;
         }
 
-        // this initiates the animation by calling the loop function
-        // for the first time
-        loop();
-    // }
+        // this function creates a 60fps animation by scheduling a
+        // loop function call before the
+        // next redraw every time it is called
+        window.requestAnimationFrame(loop);
+    }
+
+    // this initiates the animation by calling the loop function
+    // for the first time
+    loop();
 }
 
 export default initGame;
