@@ -18,7 +18,7 @@ function initGame() {
     // specify the image source relative to the html or js file
     // when the image is in the same directory as the file
     // only the file name is required:
-    img.src = `../spacebg.png`;
+    img.src = `${process.env.REACT_APP_BASE_URL}/spacebg.png`;
 
     // window.onload is an event that occurs when all the assets
     // have been succesfuly loaded (in this case only the spacebg.png)
